@@ -1,12 +1,6 @@
-first_set = set()
-second_set = set()
+first_num, second_num = [int(x) for x in input().split()]
 
-first_num, second_num = input().split()
-for num in range(int(first_num)):
-    first_set.add((input()))
-for num in range(int(second_num)):
-    second_set.add((input()))
+first_set = {input() for _ in range(first_num)}
+second_set = {input() for _ in range(second_num)}
 
-repeated_numbers = first_set.intersection(second_set)
-for num in repeated_numbers:
-    print(num)
+print(*first_set.intersection(second_set), sep='\n')

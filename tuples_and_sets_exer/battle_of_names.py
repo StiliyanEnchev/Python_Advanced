@@ -3,6 +3,7 @@ even_set = set()
 sum_odd = 0
 sum_even = 0
 
+
 for row in range(1, int(input()) + 1):
     name = input()
     sum = 0

@@ -21,8 +21,8 @@ for row in range(1, int(input()) + 1):
         sum_odd += divided
 
 if sum_odd == sum_even:
-    print(', '.join(str((sum_odd | sum_even))))
+    print(*odd_set.union(even_set), sep=', ')
 elif sum_odd > sum_even:
-    print(', '.join(str(sum_odd - sum_even)))
+    print(*odd_set.difference(even_set), sep=', ')
 else:
-    print(', '.join(str(sum_odd ^ sum_even)))
+    print(*odd_set.symmetric_difference(even_set), sep=', ')

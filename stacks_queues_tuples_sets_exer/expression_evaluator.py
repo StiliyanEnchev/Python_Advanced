@@ -3,28 +3,23 @@ from math import floor
 
 expression = deque(input().split())
 
-idx = 0
+while len(expression) > 1:
+    index = 0
 
-while idx < len(expression):
-    element = expression[idx]
+    for char in expression:
 
-    if element == '*':
-        for _ in range(idx - 1):
-            expression.appendleft(int(expression.popleft()) * int(expression.popleft()))
-    elif element == '/':
-        for _ in range(idx - 1):
-            expression.appendleft(int(expression.popleft()) / int(expression.popleft()))
-    elif element == '-':
-        for _ in range(idx - 1):
-            expression.appendleft(int(expression.popleft()) - int(expression.popleft()))
-    elif element == '+':
-        for _ in range(idx - 1):
-            expression.appendleft(int(expression.popleft()) + int(expression.popleft()))
+        if char in '-+*/':
+            for numbers in range(index - 1):
+                num1, num2 = int(expression.popleft()), int(expression.popleft())
 
-    if element in '*/+-':
-        del expression[1]
-        idx = 1
+                if char == '-':
+                    result = num1 - num2
+                elif char == '+':
+                    result = num1 + num2
+                elif char == '*':
+                    result = num1 * num2
+                elif char == '/':
+                    result = num1 / num2
 
-    idx += 1
-
-print(floor(int(expression[0])))
+        else:
+            index += 1

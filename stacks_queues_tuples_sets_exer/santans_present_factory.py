@@ -39,7 +39,4 @@ if materials:
 if magic_levels:
     print(f"Magic left: {', '.join(str(x) for x in magic_levels)}")
 
-for item in crafted:
-    print(item)
-
 [print(f'{toy}: {crafted.count(toy)}') for toy in sorted(set(crafted))]

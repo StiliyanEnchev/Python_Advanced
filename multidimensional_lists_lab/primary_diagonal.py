@@ -1,7 +1,5 @@
 matrix = []
-
 row_num = int(input())
-
 sum = 0
 
 for index in range(row_num):

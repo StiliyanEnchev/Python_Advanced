@@ -1,8 +1,11 @@
 matrix = []
+row_num = int(input())
+sum = 0
 
-for i in range(3):
-    matrix.append([])
-    for j in range(1, 4):
-        matrix[i].append(j)
+for index in range(row_num):
+    matrix.append([int(x) for x in input().split()])
+    sum += matrix[index][-1]
 
-print(matrix)
+print(sum)
+
+#reverse sum the diagonal

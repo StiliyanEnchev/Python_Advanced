@@ -10,7 +10,7 @@ for row in range(rows):
         word_copy.extend(word)
 
     if row % 2 == 0:
-        print(*[word_copy.popleft()] for _ in range(cols))
+        print(*[word_copy.popleft() for _ in range(cols)], sep='')
     else:
-        print(* [word_copy.popleft()] for _ in range(cols[::-1])
+        print(*[word_copy.popleft() for _ in range(cols)][::-1], sep='')
 

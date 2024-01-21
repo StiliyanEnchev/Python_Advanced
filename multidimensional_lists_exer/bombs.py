@@ -22,10 +22,11 @@ for row, col in coordinates:
     for x, y in directions:
         r, c = row + x, col + y
 
-        if 0 <= r < n and 0 <= c <= n:
+        if 0 <= r < n and 0 <= c < n:
             matrix[r][c] -= matrix[row][col] if matrix[r][c] > 0 else 0
 
 alive_cells = [num for row in range(n) for num in matrix[row] if num > 0]
+
 print(f'Alive cells: {len(alive_cells)}')
 print(f'Sum: {sum(alive_cells)}')
 [print(*row) for row in matrix]

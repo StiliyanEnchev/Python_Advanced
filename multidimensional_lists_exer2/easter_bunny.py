@@ -39,4 +39,4 @@ for direction, position in directions.items():
 
 print(best_direction)
 print(*best_path, sep='\n')
-print(collected_eggs)
+print(max_eggs)

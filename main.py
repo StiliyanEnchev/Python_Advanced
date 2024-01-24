@@ -1,3 +1,7 @@
-pos_numbers = [-2, -1, 1, 2]
-positions = [(x, y) for x in pos_numbers for y in pos_numbers if abs(x) != abs(y)]
-print(positions)
+def sum_nums(a, b, *args):
+    total_sum = a + b
+    for el in args:
+        total_sum += el
+    return total_sum
+
+print(sum_nums(1, 2, 1, 5))

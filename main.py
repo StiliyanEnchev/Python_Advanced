@@ -1,2 +1,18 @@
+command = input()
 
-print(sorted(list, key=lambda x: x[0]))
+while command != 'End':
+
+    try:
+        print(int(command))
+
+    except ValueError:
+        print('It is not an integer')
+
+    else:
+        print("Everything is alright")
+
+    finally:
+        print('The End')
+
+    command = input()
+

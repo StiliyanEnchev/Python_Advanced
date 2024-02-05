@@ -1,3 +1,4 @@
+import re
 from re import findall
 
 class NameTooShortError(Exception):
@@ -19,10 +20,14 @@ class MoreThanOneAtSymbol(Exception):
 class InvalidNameError(Exception):
     pass
 
+class HasNonEnglishSymbols(Exception):
+    pass
+
 VALID_DOMAINS = ('com', 'bg', "net", 'org')
 MIN_NAME_SYMBOLS_COUNT = 4
 
 pattern_name = r'\w+'
+english_pattern = r'[^\x00-\x7F]+'
 
 email = input()
 
@@ -43,6 +48,9 @@ while email != 'End':
     elif findall(pattern_name, email.split('@')[0])[0] != email.split('@')[0]:
         raise InvalidNameError('Name must have only letters, underscores and digits')
 
+    elif findall(english_pattern, email):
+
+        raise HasNonEnglishSymbols('Name must not contain any non english letters')
     print('Email is valid')
 
     email = input()

@@ -49,8 +49,8 @@ while email != 'End':
         raise InvalidNameError('Name must have only letters, underscores and digits')
 
     elif findall(english_pattern, email):
-
         raise HasNonEnglishSymbols('Name must not contain any non english letters')
+
     print('Email is valid')
 
     email = input()

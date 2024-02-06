@@ -7,9 +7,13 @@ COLS = 7
 
 DIRECTION_MAPPER = {
     'left': (0, -1),
+    'right': (0, 1),
     'up': (-1, 0),
-    'main_diagonal': (-1, -1),
-    'anti_diagonal': (-1, 1)
+    'down': (1, 0),
+    'up_left': (-1, -1),
+    'down_right': (1, 1),
+    'up_right': (-1, 1),
+    'down_left': (1, -1)
 }
 
 def print_board(board):
@@ -22,14 +26,28 @@ def place_player_choice(col_index, player_num, board):
     for row_index in range(ROWS-1, -1, -1):
         if board[row_index][col_index] == 0:
             board[row_index][col_index] = player_num
-            break
+            return [row_index, col_index]
     else:
         raise FullColumnError('This column is full, please select another one')
 
 
-def is_winner(board, current_col_inx, current_row_inx):
-    for direction, coordinats in DIRECTION_MAPPER.items():
-        pass
+def is_winner(board, current_loc, player):
+
+    current_row, current_col = current_loc[0], current_loc[1]
+    counter = 1
+    searched_element = board[current_row][current_col]
+
+    for coordinates in DIRECTION_MAPPER.values():
+        next_row, next_col = coordinates
+
+        while board[current_row + next_row][current_col + next_col] == searched_element:
+            counter += 1
+
+            if counter == 4:
+                return('Yes')
+
+  
+
 
 board = []
 
@@ -49,7 +67,9 @@ while True:
             print('The number must be positive and different than zero.')
             continue
 
-        place_player_choice(column_index, player, board)
+        current_loc = place_player_choice(column_index, player, board)
+
+        is_winner(board, current_loc, player)
 
     except FullColumnError:
         print("This column is full, please select another one")

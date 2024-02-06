@@ -14,6 +14,6 @@ for row in range(len(text)):
         elif symbol in punctuation:
             marks += 1
 
-    output_file.write(f'Line {row + 1}: {''.join(text[row][:-1])} ({letters})({marks})\n')
+    output_file.write(f'Line {row + 1}: {(text[row][:-1])} ({letters})({marks})\n')
 
 output_file.close()

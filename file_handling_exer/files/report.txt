@@ -1,0 +1,11 @@
+.py
+- - - bonus_add_sequence_nums.py
+- - - bonus_rename_files.py
+- - - directory_traversal.py
+- - - even_lines.py
+- - - file_manipulator.py
+- - - line_numbers.py
+.txt
+- - - file_1.txt
+- - - output.txt
+- - - text.txt

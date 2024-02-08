@@ -3,7 +3,7 @@ from string import punctuation
 with open('files/text.txt', 'r') as text_file:
     text = text_file.readlines()
 
-output_file = open('output.txt', 'w')
+output_file = open('files/output.txt', 'w')
 
 for row in range(len(text)):
     letters, marks = 0, 0

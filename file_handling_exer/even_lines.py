@@ -1,6 +1,6 @@
 symbols = ("-", ",", ".", "!", "?")
 
-with open("file_1.txt", 'r') as even_lines_file:
+with open("files/file_1.txt", 'r') as even_lines_file:
     text = even_lines_file.readlines()
 
 for row in range(0, len(text), 2):

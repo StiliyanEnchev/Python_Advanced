@@ -1,6 +1,6 @@
 from string import punctuation
 
-with open('text.txt', 'r') as text_file:
+with open('files/text.txt', 'r') as text_file:
     text = text_file.readlines()
 
 output_file = open('output.txt', 'w')

@@ -11,3 +11,5 @@ for filename in os.listdir(directory):
         filename_without_path = os.path.basename(file)
         new_name = str(number) + '_' + filename_without_path
         os.rename(file, os.path.join(directory, new_name))
+
+# add sequence numbers in front of the file name's of the given directory

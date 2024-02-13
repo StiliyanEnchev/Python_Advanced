@@ -1,22 +1,16 @@
+
 def gather_credits(credits_needed, *args):
-    completed_courses = []
-    total_credit = 0
+    courses_enrolled = {}
 
     for course_name, credit in args:
         credit = int(credit)
 
-        if course_name not in completed_courses:
-            completed_courses.append(course_name)
-            total_credit += credit
+        if course_name not in courses_enrolled.keys():
+            courses_enrolled[course_name] = credit
 
-        if total_credit >= credits_needed:
-            return f"Enrollment finished! Maximum credits: {total_credit}.\nCourses: {', '.join(course for course in sorted(completed_courses))}"
+        if sum(courses_enrolled.values()) >= credits_needed:
+            return (f"Enrollment finished! Maximum credits: {sum(courses_enrolled.values())}.\n"
+                    f"Courses: {', '.join(course for course in sorted(courses_enrolled))}")
 
-    return f"You need to enroll in more courses! You have to gather {credits_needed - total_credit} credits more."
-
-print(gather_credits(
-    80,
-    ("Advanced", 30),
-    ("Advanced", 27),
-    ("Advanced", 27),
-))
+    return (f"You need to enroll in more courses! "
+            f"You have to gather {credits_needed - sum(courses_enrolled.values())} credits more.")

@@ -29,8 +29,6 @@ direction = input()
 
 while direction != 'end':
     try:
-        game_board[gamblers_position[0]][gamblers_position[1]] = '-'
-
         row_direction, col_direction = direction_mapper[direction]
         new_position_row, new_position_col = gamblers_position[0] + row_direction, gamblers_position[1] + col_direction
         position_symbol = game_board[new_position_row][new_position_col]
@@ -42,6 +40,7 @@ while direction != 'end':
             total_money -= 200
 
         elif position_symbol == 'J':
+            game_board[gamblers_position[0]][gamblers_position[1]] = '-'
             game_board[new_position_row][new_position_col] = 'G'
             gamblers_position = [new_position_row, new_position_col]
             total_money += 100000
@@ -51,6 +50,7 @@ while direction != 'end':
             print_board(game_board)
             break
 
+        game_board[gamblers_position[0]][gamblers_position[1]] = '-'
         game_board[new_position_row][new_position_col] = 'G'
         gamblers_position = [new_position_row, new_position_col]
 

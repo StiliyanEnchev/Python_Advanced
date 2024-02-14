@@ -19,7 +19,7 @@ for current_row in range(n):
     neighborhood.append(received_data)
 
     if 'B' in received_data:
-        boy_starting_loc = [current_row, received_data.index('B')]
+        boy_starting_loc = (current_row, received_data.index('B'))
 
 current_position = boy_starting_loc
 

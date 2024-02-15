@@ -24,11 +24,10 @@ while chocolates and cups_of_milk and milkshakes != 5:
         cups_of_milk.append(current_milk)
         chocolates.append(current_choc - 5)
 
-if milkshakes < 5:
-    print("Not enough milkshakes.")
-else:
+if milkshakes == 5:
     print("Great! You made all the chocolate milkshakes needed!")
+elif milkshakes < 5:
+    print("Not enough milkshakes.")
 
-
-print(f'Chocolate: {(", ".join([str(number) for number in chocolates])) if chocolates else "empty"}')
-print(f'Milk: {(", ".join([str(number) for number in cups_of_milk]) if cups_of_milk else "empty")}')
+print(f'Chocolate: {(", ".join(str(number) for number in chocolates) or "empty")}')
+print(f'Milk: {(", ".join(str(number) for number in cups_of_milk) or "empty")}')
